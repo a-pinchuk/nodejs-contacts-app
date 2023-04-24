@@ -1,9 +1,11 @@
 const express = require('express');
 const logger = require('morgan');
 const cors = require('cors');
+const dotenv = require('dotenv');
 
 const contactsRouter = require('./routes/api/contacts');
 
+dotenv.config();
 const app = express();
 
 const formatsLogger = app.get('env') === 'development' ? 'dev' : 'short';
@@ -23,5 +25,3 @@ app.use((err, req, res, next) => {
 });
 
 module.exports = app;
-
-// QsTKCaveXuHFVdOy
