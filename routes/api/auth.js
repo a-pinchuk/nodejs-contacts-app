@@ -6,7 +6,7 @@ const ctrl = require('../../controllers/users');
 const router = express.Router();
 
 router.get('/current', auth, ctrl.currentUser);
-router.get('/verify', ctrl.verifyEmail);
+router.get('/verify/:verificationToken', ctrl.verifyEmail);
 router.post('/register', validateBody(schemas.registerSchema), ctrl.register);
 router.post('/login', validateBody(schemas.loginSchema), ctrl.login);
 router.post('/logout', auth, ctrl.logout);
